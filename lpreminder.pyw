@@ -50,11 +50,11 @@ class bgManager:
         return f'#{self.rval:02x}{self.gval:02x}{self.bval:02x}'
     def shouldChangeState(self):
         if self.state == self.BlueToRed:
-            return self.rval == 255
+            return self.rval >= 255
         elif self.state == self.RedToGreen:
-            return self.gval == 255
+            return self.gval >= 255
         else:
-            return self.bval == 255
+            return self.bval >= 255
 
 root = tk.Tk()
 root.geometry("600x400")
