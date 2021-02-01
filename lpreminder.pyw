@@ -13,7 +13,7 @@ class bgManager:
         self.state= self.BlueToRed
         self.iter = 0
     def nextState(self):
-        print(f'nextState {self.state}-> {self.rval},{self.gval},{self.bval}')
+        #print(f'nextState {self.state}-> {self.rval},{self.gval},{self.bval}')
         if self.state == self.BlueToRed:
             return self.RedToGreen
         elif self.state == self.RedToGreen:
@@ -21,7 +21,7 @@ class bgManager:
         else:
             return self.BlueToRed
     def resetRGB(self):
-        print(f'resetRGB start {self.state}-> {self.rval},{self.gval},{self.bval}')
+        #print(f'resetRGB start {self.state}-> {self.rval},{self.gval},{self.bval}')
         self.rval = 0
         self.gval = 0
         self.bval = 0
@@ -31,12 +31,12 @@ class bgManager:
             self.rval = 255
         else:
             self.gval = 255
-        print(f'resetRGB End {self.state}-> {self.rval},{self.gval},{self.bval}')
+        #print(f'resetRGB End {self.state}-> {self.rval},{self.gval},{self.bval}')
     def moveNextState(self):
         self.state = self.nextState()
     def shiftColor(self):
         self.iter = self.iter + 1
-        print(f'shiftColor {self.state}-> {self.rval},{self.gval},{self.bval}')
+        #print(f'shiftColor {self.state}-> {self.rval},{self.gval},{self.bval}')
         if self.state == self.BlueToRed:
             self.bval = max(0,self.bval-5)
             self.rval = min(255,self.rval+5)
